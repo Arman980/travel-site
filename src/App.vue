@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<v-container>
+      <HelloWorld/>
+      
+      <card1/>
+        <card1/>
+         
+    
+</v-container>
+
 </template>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+.container.pa-4.text-center {
+    margin-top: 124px;
 }
 </style>
+
+<script>
+import HelloWorld from './components/HelloWorld';
+import card1 from './components/card1';
+
+export default {
+  name: 'App',
+
+  components: {
+    HelloWorld,
+    card1
+  },
+
+
+  data: () => ({
+    
+  }),
+};
+</script>
