@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Display from '../views/Display.vue'
+import Sign from '../views/Sign'
 
 Vue.use(VueRouter)
 
@@ -23,8 +24,12 @@ const routes = [
     path: '/display',
     name: 'display',
     component: Display
+  },
+  {
+    path: '/sign',
+    name: 'sign',
+    component: Sign
   }
- 
 ]
 
 const router = new VueRouter({

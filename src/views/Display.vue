@@ -37,7 +37,9 @@
 <script>
 export default {
   name: "display",
-  components: {},
+  components: {
+    
+  },
   data() {
     return {
       items: [
