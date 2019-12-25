@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Display from '../views/Display.vue'
 import Sign from '../views/Sign'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/sign',
     name: 'sign',
     component: Sign
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact
   }
 ]
 
