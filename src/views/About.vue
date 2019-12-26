@@ -11,8 +11,8 @@
           </v-row>
 
           <br />
-          <v-parallax
-            src="https://www.tsarvoyages-caucase.com/images/destinations/1918/dreamstime%20(c)%20monast%C3%A8re.jpg"
+          <v-parallax 
+            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
           ></v-parallax>
         </v-col>
         <v-col cols="12">
@@ -43,31 +43,76 @@
         </v-col>
       </v-row>
 
-      
-<v-row justify="center">
-      <h1>Our Team</h1>
+      <v-row justify="center">
+        <h1>Our Team</h1>
       </v-row>
       <p>
-       <v-divider></v-divider>
-       </p>
-      <v-card class="mx-auto" max-width="400">
-        <v-img
-          class="white--text align-end"
-          height="200px"
-          src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-        >
-          <v-card-title>Arman Gasparyan</v-card-title>
-        </v-img>
+        <v-divider></v-divider>
+      </p>
 
-        <v-card-subtitle class="pb-0">Front End Developer</v-card-subtitle>
 
-        <v-card-text class="text--primary">
-          <div>From Yerevan</div>
-        </v-card-text>
-      </v-card>
+
+      <v-row justify="center">
+        <v-col cols="7" md="3">
+          <v-card>
+            <v-img
+              class="white--text align-end"
+              height="200px"
+              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            >
+              <v-card-title>Arman Gasparyan</v-card-title>
+            </v-img>
+
+            <v-card-subtitle class="pb-0">Front End Developer</v-card-subtitle>
+
+            <v-card-text class="text--primary">
+              <div>From Yerevan</div>
+            </v-card-text>
+          </v-card>
+        </v-col>
+
+        <v-col cols="7" md="3">
+          <v-card>
+            <v-img
+              class="white--text align-end"
+              height="200px"
+              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            >
+              <v-card-title>Erik Movsisyan</v-card-title>
+            </v-img>
+
+            <v-card-subtitle class="pb-0">Front End Developer</v-card-subtitle>
+
+            <v-card-text class="text--primary">
+              <div>From Yerevan</div>
+            </v-card-text>
+          </v-card>
+        </v-col>
+
+        <v-col cols="7" md="3">
+          <v-card>
+            <v-img
+              class="white--text align-end"
+              height="200px"
+              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            >
+              <v-card-title>Khoren Hakobyan</v-card-title>
+            </v-img>
+
+            <v-card-subtitle class="pb-0">Front End Developer</v-card-subtitle>
+
+            <v-card-text class="text--primary">
+              <div>From Yerevan</div>
+            </v-card-text>
+          </v-card>
+        </v-col>
+
+      </v-row>
     </div>
   </v-container>
 </template>
+
+
 
 <script>
 export default {
