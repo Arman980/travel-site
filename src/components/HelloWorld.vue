@@ -19,18 +19,29 @@
 
       
 
-      <v-toolbar-title>Best Travel</v-toolbar-title>
+      <v-toolbar-title>
+        <img src="//overlandarmenia.com/images/logo.svg" alt="logo">
+      </v-toolbar-title>
+   
+
 
       <v-spacer></v-spacer>
+
+ <img width="20"  style="margin-right:10px;" src="//overlandarmenia.com/images/call.svg" alt="">
+
+<a class="ml-2 pr-2" style="color:white;
+    text-decoration: none;
+    background-color: transparent;margin-right:30px;"  href="tel:+37491100139">+37491100139</a>
+
+<a class="ml-2 pr-2" style="color:white;
+    text-decoration: none;
+    background-color: transparent;"   href="tel:+37477963369">+37477963369</a>
 
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
+     
       <v-menu
         bottom
         left
@@ -53,6 +64,7 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
+      
       </v-menu>
 
       <template v-slot:extension>
@@ -76,17 +88,14 @@
   </v-card>
 </template>
 <script>
-export default {
-  name: 'HelloWorld',
-
-  data: () => ({
-   items: [
+  export default {
+    data: () => ({
+      items: [
         { title: 'Click Me' },
         { title: 'Click Me' },
         { title: 'Click Me' },
         { title: 'Click Me 2' },
       ],
-    
-  }),
-};
+    }),
+  }
 </script>
