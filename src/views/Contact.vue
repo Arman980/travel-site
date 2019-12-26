@@ -12,7 +12,7 @@
                     <v-text-field label="Name" v-model="name" :rules="rules"></v-text-field>
                     <v-text-field v-model="email" label="Email" :rules="rules"></v-text-field>
                     <v-text-field v-model="theme" label="Theme" :rules="rules"></v-text-field>
-                    <v-text-field v-model="message" label="Message" :rules="rules" counter="50"></v-text-field>
+                    <v-text-field v-model="message" label="Message" :rules="messageRules" counter="50"></v-text-field>
                   </v-col>
                 </v-row>
               </v-form>
@@ -36,6 +36,9 @@ export default {
       theme: null,
       message: null,
       rules: [
+        v => !!v || "Required.",
+      ],
+      messageRules: [
         v => !!v || "Required.",
         v => v.length <= 50 || "Max 50 characters"
       ]

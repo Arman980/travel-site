@@ -7,13 +7,13 @@
           <v-form>
             <v-row>
               <v-col cols="12" md="12">
-                <v-text-field v-model="name" label="Email"></v-text-field>
+                <v-text-field v-model="name" label="Email" :rules="rules"></v-text-field>
 
                 <v-text-field
                   label="Password"
                   v-model="password"
                   :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                  :rules="rules"
+                  :rules="passwordRules"
                   :type="show1 ? 'text' : 'password'"
                   @click:append="show1 = !show1"
                 ></v-text-field>
@@ -37,8 +37,12 @@ export default {
       password: null,
       name: null,
       rules: [
+        v => !!v || "Required."
+        ],
+      passwordRules: [
         v => !!v || "Required.",
-        v => (v && v.length >= 8) || "Min 8 characters"
+        v => (v && v.length >= 8) || "Min 8 characters",
+        v => /(?=.*\d)/.test(v) || "Must have one number"
       ]
     };
   }

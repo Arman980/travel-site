@@ -7,8 +7,8 @@
           <v-form>
             <v-row>
               <v-col cols="12" md="12">
-                <v-text-field v-model="firstname" label="First name"></v-text-field>
-                <v-text-field v-model="lastname" label="Last name"></v-text-field>
+                <v-text-field v-model="firstname" label="First name" :rules="rules"></v-text-field>
+                <v-text-field v-model="lastname" label="Last name" :rules="rules"></v-text-field>
                 <v-text-field v-model="email" label="Email" :rules="emailRules"></v-text-field>
                 <v-text-field
                   v-model="c_email"
@@ -19,7 +19,7 @@
                   label="Password"
                   v-model="password"
                   :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                  :rules="rules"
+                  :rules="passwordRules"
                   :type="show1 ? 'text' : 'password'"
                   @click:append="show1 = !show1"
                 ></v-text-field>
@@ -47,11 +47,14 @@ export default {
       firstname: null,
       lastname: null,
       c_email: null,
+      rules: [
+        v => !!v || "Email is required",
+      ],
       emailRules: [
         v => !!v || "Email is required",
         v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
-      rules: [
+      passwordRules: [
         value => !!value || "Required.",
         v => (v && v.length >= 8) || "Min 8 characters",
         v => /(?=.*\d)/.test(v) || "Must have one number"
