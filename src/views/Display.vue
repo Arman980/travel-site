@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     getSite: async function () {
-      let response = await axios.get('http://localhost:4000/getSite')
+      let response = await axios.get('https://armenian-travel.herokuapp.com/getSite')
       this.site = response.data['site']
     }
   },
