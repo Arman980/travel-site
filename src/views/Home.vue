@@ -1,21 +1,40 @@
 <template>
   <div class="home">
-   <card1></card1>
-    <card1></card1>
-     <card1></card1>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <card2/>
   </div>
 </template>
 
 <script>
+import card2 from '../components/card2'
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
   components: {
-    HelloWorld
-  }
+    card2
+  },
+   data () {
+      return {
+        items: [
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+          },
+        ],
+      }
+    },
 }
 </script>
+
+
+ 
+   
+
+
