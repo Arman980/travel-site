@@ -117,8 +117,8 @@
         >
           <v-tab to="/" style="background-color:#dc6337">Home</v-tab>
           <v-tab to="/about" style="background-color:#f37b1f">About</v-tab>
-          <v-tab style="background-color:#fec208;">Contact</v-tab>
-          <v-tab style="background-color:#ef5a23;">Display</v-tab>
+          <v-tab to="contact" style="background-color:#fec208;">Contact</v-tab>
+          <v-tab to="/armenia" style="background-color:#ef5a23;">Armenia</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
