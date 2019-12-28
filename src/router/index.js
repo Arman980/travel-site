@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Display from '../views/Display.vue'
 import Sign from '../views/Sign'
 import Contact from '../views/Contact.vue'
+import Armenia from '../views/Armenia.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact
+  },
+  {
+    path: '/armenia',
+    name: 'armenia',
+    component: Armenia
   }
 ]
 
