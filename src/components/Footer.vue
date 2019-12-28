@@ -29,7 +29,7 @@
         <hr>
 
         <v-card-text class="white--text" style="text-align: center ;background-color: #397cbf;">
-            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+            {{ new Date().getFullYear() }} — <strong>Yerevan</strong>
         </v-card-text>
         </v-card>
     </v-footer>

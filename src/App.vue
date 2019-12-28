@@ -22,8 +22,62 @@
 
       <v-spacer></v-spacer>
 
-      <img width="20" class="ma-2 pt-1" src="//overlandarmenia.com/images/call.svg" alt />
+      <v-slide-x-reverse-transition>
+        <v-text-field
+        v-show="searchShow"
+          clearable
+          filled
+          hide-details
+          dark
+          label="Search"
+          v-model="search">
+        </v-text-field>
+      </v-slide-x-reverse-transition>
+      <v-btn icon @click="searchShow = !searchShow">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+      
+      <v-btn icon>
+        <img
+          @click.stop="dialog = true"
+          width="20"
+          class="ma-2 pt-1"
+          src="//overlandarmenia.com/images/call.svg"
+          alt
+        />
+      </v-btn>
+      <v-dialog v-model="dialog" max-width="400">
+        <v-hover v-slot:default="{ hover }">
+          <v-card class="mb-2">
+            <v-card-title
+              class="headline"
+              style="justify-content: center;  color:#43a047;"
+            >Contact Us</v-card-title>
+            <v-card-text>
+              <a
+                href="tel:+37491100139"
+                style="color:black;
+    text-decoration: none;
+    background-color: transparent"
+              >+37491100139</a>
+              <br />
 
+              <a
+                href="tel:+37477963369"
+                style="color:black;
+    text-decoration: none;
+    background-color: transparent"
+              >+37477963369</a>
+              <br />
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="green darken-1" text @click="dialog = false">Close</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-hover>
+      </v-dialog>
       <a
         class="ma-2 hidden-sm-and-down title"
         style="color:white;
@@ -40,10 +94,6 @@
         href="tel:+37477963369"
       >+37477963369</a>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon color="yellow" v-on="on">
@@ -53,7 +103,7 @@
 
         <v-list>
           <v-list-item v-for="(item, i) in items" :key="i" :to="item.route">
-            <v-list-item-title >{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -73,7 +123,13 @@
       </template>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="show" app class="hidden-md-and-up" disable-resize-watcher disable-route-watcher>
+    <v-navigation-drawer
+      v-model="show"
+      app
+      class="hidden-md-and-up"
+      disable-resize-watcher
+      disable-route-watcher
+    >
       <v-list-item>
         <v-list-item-content>
           <v-row justify="start">
@@ -86,15 +142,8 @@
 
       <v-divider></v-divider>
 
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in pages"
-          :key="item.title"
-          :to=item.route
-        >
+      <v-list dense nav>
+        <v-list-item v-for="item in pages" :key="item.title" :to="item.route">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -106,14 +155,10 @@
       </v-list>
     </v-navigation-drawer>
 
-
-
-
     <v-content>
-      <router-view>
-      </router-view>
+      <router-view></router-view>
     </v-content>
-    <Footer/>
+    <Footer />
   </v-app>
 </template>
 
@@ -131,7 +176,7 @@
 </style>
 
 <script>
-import Footer from './components/Footer'
+import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
@@ -139,16 +184,19 @@ export default {
   },
 
   data: () => ({
+    dialog: false,
     show: false,
+    searchShow: false,
+    search: null,
     items: [
-      {title: 'Login', route: '/sign', props: {tab: '0'}},
-      {title: 'Register', route: '/sign', props: {tab: '1'}}
+      { title: "Login", route: "/sign", props: { tab: "0" } },
+      { title: "Register", route: "/sign", props: { tab: "1" } }
     ],
     pages: [
-      {title: 'Home', route: '/', icon: 'mdi-home'},
-      {title: 'About', route: '/about', icon: 'mdi-information-outline'},
-      {title: 'Contact', route: '/contact', icon: 'mdi-send'},
-      {title: 'About Armenia', route: '/armenia', icon: 'mdi-map-marker'},
+      { title: "Home", route: "/", icon: "mdi-home" },
+      { title: "About", route: "/about", icon: "mdi-information-outline" },
+      { title: "Contact", route: "/contact", icon: "mdi-send" },
+      { title: "About Armenia", route: "/armenia", icon: "mdi-map-marker" }
     ]
   })
 };
