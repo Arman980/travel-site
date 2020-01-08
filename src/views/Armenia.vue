@@ -1,15 +1,15 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" md="8" >
+      <v-col cols="12">
         <h2>About Armenia</h2>
 
         <div class="armenia">
           <iframe
             class="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563322.3710997235!2d43.91694542877945!3d40.06729189499692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40155684e773bac7%3A0xd0b4757aeb822d23!2sArmenia!5e0!3m2!1sen!2s!4v1577537268556!5m2!1sen!2s"
-            width="600"
-            height="450"
+            width="350"
+            height="250"
             frameborder="0"
             style="border:0;"
             allowfullscreen
@@ -78,34 +78,43 @@
           <br />
         </div>
 
-          <p class="header">National Symbols</p>
+        <p class="header">National Symbols</p>
+      </v-col>
+    </v-row>
 
-        <div class="main">
-          <div class="flag">
-            <p class="about">Flag</p>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Armenia.svg/2880px-Flag_of_Armenia.svg.png"
-            />
-          </div>
-          <div class="Coat-of-arms">
-            <p class="about">Coat-of-arms</p>
-
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Coat_of_arms_of_Armenia.svg/2560px-Coat_of_arms_of_Armenia.svg.png"
-            />
-          </div>
-          <div class="Anthem">
-            <p class="about">Anthem</p>
-            <iframe
-              width="550"
-              height="350"
-              src="https://www.youtube.com/embed/nxhMfBYvFmA"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+    <v-row>
+      <v-col cols="12" md="4">
+        <div class="flag">
+          <p class="about">Flag</p>
+          <v-img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Armenia.svg/2880px-Flag_of_Armenia.svg.png"
+            max-width="500"
+            max-height="400"
+          />
         </div>
+      </v-col>
+      <v-col cols="12" md="4">
+        <div class="Coat-of-arms">
+          <p class="about1">Coat-of-arms</p>
+
+          <v-img
+            class="ml-7, ma-10"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Coat_of_arms_of_Armenia.svg/2560px-Coat_of_arms_of_Armenia.svg.png"
+            max-width="400"
+            max-height="385"
+          />
+        </div>
+      </v-col>
+      <v-col cols="12" md="4">
+        <p class="about2">Anthem</p>
+        <iframe class="anthem"
+          width="320"
+          height="300"
+          src="https://www.youtube.com/embed/nxhMfBYvFmA"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </v-col>
     </v-row>
   </v-container>
@@ -116,6 +125,9 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+}
+.anthem{
+  margin-left: 15px
 }
 iframe {
   float: left;
@@ -131,16 +143,7 @@ h2 {
 }
 .text {
   font-size: 18px;
-  margin-left: 50px;
-}
-.main {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px
-}
-.main img {
-  width: 480px;
-  height: 350px;
+  margin-left: 30px;
 }
 .globus {
   float: right;
@@ -157,7 +160,15 @@ h2 {
 }
 .header {
   font-size: 50px;
-  margin-left: 650px
+  text-align: center;
+}
+.about1 {
+  font-size: 50px;
+  text-align: center;
+}
+.about2 {
+  font-size: 50px;
+  margin-left: 90px
 }
 </style>
 <script>

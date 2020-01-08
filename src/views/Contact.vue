@@ -8,12 +8,20 @@
               <h2 style="text-align: center">Contact</h2>
               <v-form>
                 <v-row>
-                  <v-col cols="12" md="12">
+                  <v-col cols="12">
                     <v-text-field label="Name" v-model="name" :rules="rules"></v-text-field>
                     <v-text-field v-model="email" label="Email" :rules="rules"></v-text-field>
                     <v-text-field v-model="theme" label="Theme" :rules="rules"></v-text-field>
-                    <v-text-field v-model="message" label="Message" :rules="messageRules" counter="50"></v-text-field>
-                  </v-col>
+                    <v-textarea
+                      v-model="message"
+                      label="Message"
+                      :rules="messageRules"
+                      counter="50"
+                      outlined
+                      name="input-7-4"
+                      value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+                    ></v-textarea>
+                  </v-col> 
                 </v-row>
               </v-form>
               <v-btn>Button</v-btn>
@@ -35,9 +43,7 @@ export default {
       name: null,
       theme: null,
       message: null,
-      rules: [
-        v => !!v || "Required.",
-      ],
+      rules: [v => !!v || "Required."],
       messageRules: [
         v => !!v || "Required.",
         v => v.length <= 50 || "Max 50 characters"
