@@ -4,7 +4,7 @@
       <v-col v-for="card in cards" :key="card.id" cols="12" lg="3">
           <v-hover v-slot:default="{ hover }">
         <v-card shaped class="mx-auto overlay" max-width="400" :elevation="hover ? 12 : 2">
-          <v-img class="white--text align-end" height="200px" :src="card.src">
+          <v-img class="white--text align-end" height="200px" :src="card.images[0]">
            
           </v-img>
 
@@ -29,29 +29,23 @@
 
 
 <script>
+import axios from 'axios'
   export default {
     name: "card2",
     data: () => ({
-      cards: [
-        {
-        src: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Tatev_Monastery_from_a_distance.jpg",
-        title: "Tatev Monastery",
-        id: "1",
-        description: "esdessdssdds"
-      },
-      {
-        src: "https://janarmenia.com/wp-content/uploads/2019/06/noravanq-monastery-1.jpg",
-        title: "Noravank Monastery",
-        id: "2",
-        description: "esdessdssdds"
-      },
-      {
-        src: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Garni_Temple_02.JPG",
-        title: "Garni Monastery",
-        id: "3",
-        description: "esdessdssdds"
+      cards: null
+    }),
+    methods: {
+      getSite: async function () {
+        const params = {
+          id: this.$route.params.id
+        }
+        let response = await axios.get('https://armenian-travel.herokuapp.com/getSites', { params })
+        this.cards = response.data['cards']
       }
-      ]
-    })
-  };
+    },
+    created() {
+      this.getSite();
+    }
+  }
 </script>

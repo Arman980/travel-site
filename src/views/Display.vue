@@ -45,8 +45,11 @@ export default {
   },
   methods: {
     getSite: async function () {
-      let response = await axios.get('https://armenian-travel.herokuapp.com/getSite')
-      this.site = response.data['site']
+      const params = {
+        id: this.$route.params.id
+      }
+      let response = await axios.get('https://armenian-travel.herokuapp.com/getInfo', { params })
+      this.site = response.data['info']
     }
   },
   created() {

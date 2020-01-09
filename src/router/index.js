@@ -6,6 +6,7 @@ import Display from '../views/Display.vue'
 import Sign from '../views/Sign'
 import Contact from '../views/Contact.vue'
 import Armenia from '../views/Armenia.vue'
+import Submit from '../views/Submit.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/armenia',
     name: 'armenia',
     component: Armenia
+  },
+  {
+    path: '/submit',
+    name: 'submit',
+    component: Submit
   }
 ]
 

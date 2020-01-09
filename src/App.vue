@@ -2,13 +2,12 @@
   <v-app>
     <v-app-bar
       app
+      fixed
       color="#dc6337"
       dark
       shrink-on-scroll
       prominent
       src="https://picsum.photos/1920/1080?random"
-      fade-img-on-scroll
-      scroll-target="#scrolling-techniques-4"
     >
       <template v-slot:img="{ props }">
         <v-img v-bind="props" gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"></v-img>
@@ -16,8 +15,8 @@
 
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="show = !show"></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="hidden-sm-and-down">
-        <img src="//overlandarmenia.com/images/logo.svg" alt="logo" />
+      <v-toolbar-title class="hidden-sm-and-down pa-0">
+        <v-img src="./assets/overland.svg" alt="logo" />
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -109,17 +108,22 @@
       </v-menu>
 
       <template v-slot:extension class="hidden-sm-and-down">
-        <v-tabs
-          align-with-title
-          background-color="transparent"
-          style="display:flex ;justify-content: space-around"
-          class="hidden-sm-and-down"
-        >
-          <v-tab to="/" style="background-color:#dc6337">Home</v-tab>
-          <v-tab to="/about" style="background-color:#f37b1f">About</v-tab>
-          <v-tab to="contact" style="background-color:#fec208;">Contact</v-tab>
-          <v-tab to="/armenia" style="background-color:#ef5a23;">Armenia</v-tab>
-        </v-tabs>
+        <v-row justify="center">
+          <v-col cols="8">
+            <v-tabs
+              align-with-title
+              background-color="transparent"
+              class="hidden-sm-and-down"
+              fixed-tabs
+            >
+              <v-tab to="/" style="background-color:#dc6337">Home</v-tab>
+              <v-tab to="/about" style="background-color:#f37b1f">About</v-tab>
+              <v-tab to="/contact" style="background-color:#fec208;">Contact</v-tab>
+              <v-tab to='/submit' style="background-color:#f57842;">Submit</v-tab>
+              <v-tab to='/armenia' style="background-color:#ef5a23;">Armenia</v-tab>
+            </v-tabs>
+          </v-col>
+          </v-row>
       </template>
     </v-app-bar>
 
@@ -196,7 +200,8 @@ export default {
       { title: "Home", route: "/", icon: "mdi-home" },
       { title: "About", route: "/about", icon: "mdi-information-outline" },
       { title: "Contact", route: "/contact", icon: "mdi-send" },
-      { title: "About Armenia", route: "/armenia", icon: "mdi-map-marker" }
+      { title: "About Armenia", route: "/armenia", icon: "mdi-map-marker" },
+      { title: "Submit", route: "/submit", icon: " mdi-account-key" }
     ]
   })
 };
