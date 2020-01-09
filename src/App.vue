@@ -16,7 +16,10 @@
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="show = !show"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="hidden-sm-and-down pa-0">
-        <v-img src="./assets/overland.svg" alt="logo" />
+        <v-img src="./assets/wq.png" alt="logo" 
+        max-height="60"
+        max-width="60"
+        />
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -136,9 +139,11 @@
     >
       <v-list-item>
         <v-list-item-content>
-          <v-row justify="start">
+          <v-row justify="center">
             <v-col cols="9">
-              <v-img class="ml-4" src="//overlandarmenia.com/images/logo.svg" alt="logo" />
+              <v-img class="ml-4" src="./assets/wq.png" alt="logo" 
+               max-height="75"
+        max-width="75"/>
             </v-col>
           </v-row>
         </v-list-item-content>

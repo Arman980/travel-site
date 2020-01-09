@@ -17,7 +17,7 @@
           <v-card-actions>
             <v-spacer></v-spacer>
 
-            <v-btn color="orange" text>More</v-btn>
+            <v-btn color="orange" @click="$router.push({path: `display/${card.id}`})" text>More</v-btn>
           </v-card-actions>
         </v-card>
         </v-hover>

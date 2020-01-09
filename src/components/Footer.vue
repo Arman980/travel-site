@@ -23,7 +23,7 @@
         </v-card-text>
 
         <v-card-text class="white--text pt-0" style="background-color: #397cbf;">
-            TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project TUMO Project
+          Our commitment to our customers has been at the core of who we are for 100 years. We’re relentlessly focused on “Doing it Right” and being a trusted financial services provider to our consumer, commercial, and corporate customers. We are one of the largest full-service automotive finance operations in the country and offer a wide range of financial services and insurance products to automotive dealerships and consumers. That’s why over 8,000,000 people already trust us to help with their bank, auto, invest and other financial needs.
         </v-card-text>
 
         <hr>

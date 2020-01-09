@@ -4,7 +4,7 @@
       <v-col cols="12" md="8" class="pa-0">
         <v-carousel height="auto" hide-delimiter-background show-arrows-on-hover>
           <v-carousel-item
-            v-for="(src,i) in site.pictures"
+            v-for="(src,i) in site.images"
             :key="i"
             reverse-transition="fade-transition"
             transition="fade-transition"

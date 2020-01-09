@@ -75,7 +75,7 @@ export default {
       this.item = null;
     },
     submit: async function () {
-      let response = await axios.post('https://armenian-travel.herokuapp.com/postSite', { title: this.title, description: this.description, images: this.images })
+      let response = await axios.post('https://armenian-travel.herokuapp.com/postSite', { title: this.name, description: this.description, images: this.images })
       let id = response.data
       this.$router.push(`/display/${id}`)
     }
