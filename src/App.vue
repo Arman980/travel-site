@@ -110,6 +110,7 @@
 
       <template v-slot:extension class="hidden-sm-and-down">
         <v-tabs
+        
           align-with-title
           background-color="transparent"
           style="display:flex ;justify-content: space-around"
