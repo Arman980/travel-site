@@ -10,18 +10,18 @@
                 <v-row>
                   <v-col cols="12">
                     <v-text-field label="Name" v-model="name" :rules="rules"></v-text-field>
-                    <v-text-field v-model="email" label="Email" :rules="rules"></v-text-field>
+                    <v-text-field v-model="email" label="Email" :rules="emailRules"></v-text-field>
                     <v-text-field v-model="theme" label="Theme" :rules="rules"></v-text-field>
                     <v-textarea
                       v-model="message"
                       label="Message"
-                      :rules="messageRules"
+                      :rules="rules"
                       counter="50"
                       outlined
                       name="input-7-4"
                       value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
                     ></v-textarea>
-                  </v-col> 
+                  </v-col>
                 </v-row>
               </v-form>
               <v-btn>Button</v-btn>
@@ -47,6 +47,10 @@ export default {
       messageRules: [
         v => !!v || "Required.",
         v => v.length <= 50 || "Max 50 characters"
+      ],
+      emailRules: [
+        v => !!v || "Email is required",
+        v => /.+@.+\..+/.test(v) || "Email must be valid"
       ]
     };
   }

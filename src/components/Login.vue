@@ -7,7 +7,7 @@
           <v-form>
             <v-row>
               <v-col cols="12" md="12">
-                <v-text-field v-model="name" label="Email" :rules="rules"></v-text-field>
+                <v-text-field v-model="name" label="Email" :rules="emailRules"></v-text-field>
 
                 <v-text-field
                   label="Password"
@@ -36,13 +36,14 @@ export default {
       show1: false,
       password: null,
       name: null,
-      rules: [
-        v => !!v || "Required."
-        ],
       passwordRules: [
         v => !!v || "Required.",
         v => (v && v.length >= 8) || "Min 8 characters",
         v => /(?=.*\d)/.test(v) || "Must have one number"
+      ],
+      emailRules: [
+        v => !!v || "Email is required",
+        v => /.+@.+\..+/.test(v) || "Email must be valid"
       ]
     };
   }

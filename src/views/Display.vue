@@ -38,11 +38,13 @@
               label="Additional notes"
               counter="50"
               outlined
+              clearable=""
               name="input-7-4"
               value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
             ></v-textarea>
             <div class="my-2">
-              <v-btn block x-large color="success" dark>BOOK TOUR NOW</v-btn>
+              <v-btn  :loading="loading1"
+      :disabled="loading1" @click = "loader = 'loading',clear()" block x-large color="success" dark>BOOK TOUR NOW</v-btn>
             </div>
           </v-container>
         </v-card>
@@ -66,6 +68,8 @@ export default {
   },
   data() {
     return {
+      loader: null,
+      loading1: false,
       radios: "350$",
       site: null,
       items: [
@@ -77,6 +81,16 @@ export default {
       message: null
     }
   },
+   watch: {
+      loader () {
+        const l = this.loader
+        this[l] = !this[l]
+
+        setTimeout(() => (this[l] = false), 3000)
+
+        this.loader = null
+      }
+    },
   methods: {
     getSite: async function () {
       const params = {
@@ -85,8 +99,10 @@ export default {
       let response = await axios.get('https://armenian-travel.herokuapp.com/getInfo', { params })
       this.site = response.data['info']
       this.loading = false
-      console.log(this.site.images)
-    }
+     },
+     clear: function () {
+       this.message = null
+     }
   },
   created() {
     this.getSite();
